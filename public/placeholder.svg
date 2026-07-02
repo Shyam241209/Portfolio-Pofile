@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Placeholder SVG: person with briefcase and circular arrow. Copy/paste into your project where needed. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 64 64" role="img" aria-label="Person with briefcase and circular arrow">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+  </defs>
+  <!-- circular arrow -->
+  <path d="M32 6a26 26 0 1 0 18 7" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M25 6 L32 2 L39 6" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- person silhouette -->
+  <circle cx="32" cy="26" r="6" fill="#111827" />
+  <path d="M23 42c1-6 6-10 13-10s12 4 13 10v2H23v-2z" fill="#111827" />
+  <!-- tie -->
+  <path d="M31 30 L32 36 L33 30 Z" fill="#0ea5e9" />
+  <!-- briefcases (left & right) to echo the reference) -->
+  <rect x="8" y="36" width="12" height="10" rx="1.5" ry="1.5" fill="#111827" />
+  <rect x="10" y="38" width="8" height="6" fill="none" stroke="#93c5fd" stroke-width="0.8" />
+  <rect x="44" y="36" width="12" height="10" rx="1.5" ry="1.5" fill="#111827" />
+  <rect x="46" y="38" width="8" height="6" fill="none" stroke="#93c5fd" stroke-width="0.8" />
+  <line x1="42" y1="41" x2="44" y2="41" stroke="#111827" stroke-width="1.5" stroke-linecap="round" />
+  <circle cx="32" cy="32" r="31" fill="none" stroke-opacity="0.06" stroke="#000" />
+</svg>

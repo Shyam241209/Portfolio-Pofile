@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Portfolio Theme - Navy & Neon Cyan */
+    --background: 210 50% 8%;
+    --foreground: 180 100% 95%;
+
+    --card: 210 45% 12%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 210 45% 12%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 210 50% 8%;
+
+    --secondary: 270 60% 60%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 180 20% 70%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 210 50% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 18%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --navy-dark: 210 50% 8%;
+    --navy-medium: 210 45% 12%;
+    --navy-light: 210 40% 18%;
+    --neon-cyan: 180 100% 50%;
+    --neon-purple: 270 60% 60%;
+    --neon-blue: 200 100% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-purple)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)), hsl(180 60% 15%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--navy-medium)), hsl(var(--navy-light)));
+    
+    /* Shadows & Glows */
+    --glow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5), 0 0 40px hsl(var(--neon-cyan) / 0.3);
+    --glow-purple: 0 0 20px hsl(var(--neon-purple) / 0.5), 0 0 40px hsl(var(--neon-purple) / 0.3);
+    --glow-soft: 0 8px 32px hsl(var(--neon-cyan) / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+    background: linear-gradient(135deg, hsl(var(--navy-dark)), hsl(180 60% 15%));
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .glow-soft {
+    box-shadow: var(--glow-soft);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .border-gradient {
+    position: relative;
+    background: hsl(var(--card));
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Social icon interactions */
+  .social-icon {
+    @apply p-2 rounded-full transition-transform duration-300 inline-flex items-center justify-center;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  }
+
+  .social-icon svg {
+    transition: transform var(--transition-smooth), filter var(--transition-smooth), color var(--transition-smooth);
+  }
+
+  /* GitHub - pop & rotate */
+  .github-pop:hover {
+    transform: scale(1.18) rotate(-8deg);
+    box-shadow: 0 12px 48px rgba(0,0,0,0.42);
+  }
+  .github-pop:active {
+    animation: pop 360ms var(--transition-bounce);
+  }
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+
+  /* LinkedIn - soft lift + blue glow */
+  .linkedin-glow:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 36px hsl(var(--neon-blue) / 0.18);
+  }
+  .linkedin-glow svg { color: hsl(var(--neon-blue)); }
+
+  /* Instagram - colorful bloom */
+  .instagram-bloom {
+    position: relative; overflow: hidden;
+  }
+  .instagram-bloom::before {
+    content: '';
+    position: absolute; inset: -20%;
+    background: radial-gradient(circle at 20% 20%, rgba(255,140,0,0.18), rgba(255,45,149,0.12) 40%, transparent 60%);
+    opacity: 0; transform: scale(0.6); transition: opacity 300ms ease, transform 400ms cubic-bezier(.2,.8,.2,1);
+    border-radius: 9999px; pointer-events: none;
+  }
+  .instagram-bloom:hover::before { opacity: 1; transform: scale(1.05); }
+  .instagram-bloom:hover svg { transform: rotate(14deg) scale(1.08); filter: drop-shadow(0 12px 30px rgba(255,45,149,0.25)); }
+
+  /* Twitter - fly & flutter */
+  .twitter-fly:hover { transform: translateY(-8px) rotate(-4deg); }
+  .twitter-fly:active { animation: flutter 420ms ease; }
+  @keyframes flutter {
+    0% { transform: translateY(0); }
+    40% { transform: translateY(-12px) rotate(-8deg); }
+    70% { transform: translateY(-6px) rotate(-4deg); }
+    100% { transform: translateY(0); }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.5), 0 0 40px hsl(var(--neon-cyan) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--neon-cyan) / 0.8), 0 0 60px hsl(var(--neon-cyan) / 0.5);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
