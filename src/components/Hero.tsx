@@ -88,7 +88,7 @@ const Hero = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <a
-                    href="https://github.com/Shyam241209"
+                    href="https://github.com/Shyam241209/Portfolio-Pofile"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"

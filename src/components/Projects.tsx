@@ -24,13 +24,13 @@ const projects = [
     live: 'https://example.com/civic',
   },
   {
-    title: 'Personal Portfolio',
+    title: 'Portfolio Website',
     description:
-      'Designed and developed a modern developer portfolio to showcase technical skills, projects, and professional experience with smooth animations and responsive design.',
-    tags: ['React.js', 'Vite', 'Tailwind CSS', 'TypeScript'],
+      'Designed and developed a modern, fully responsive Full Stack Developer portfolio showcasing my skills, projects, and experience. Built with React, TypeScript, Tailwind CSS, and Vite, featuring smooth animations, a polished dark-mode UI, and a functional MERN contact form integrated with Node.js, Express.js, MongoDB Atlas, and Nodemailer.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Nodemailer'],
     image: projectPortfolio,
-    github: 'https://github.com/Shyam241209/portfolio',
-    live: 'https://example.com/portfolio',
+    github: 'https://github.com/Shyam241209/Portfolio-Pofile',
+    live: 'https://YOUR-VERCEL-DOMAIN.vercel.app',
   },
 ];
 
@@ -165,7 +165,7 @@ const Projects = () => {
         {/* View More Button */}
         <div className="text-center mt-12">
           <a
-            href="https://github.com/Shyam241209"
+            href="https://github.com/Shyam241209/Portfolio-Pofile"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-neon-purple inline-flex items-center gap-2 transition-all duration-300 hover:scale-[1.02]"

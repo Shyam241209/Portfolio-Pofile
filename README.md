@@ -34,5 +34,5 @@ Coming Soon
 
 Shyam Sundar V
 
-GitHub: https://github.com/Shyam241209
-LinkedIn: (Add your LinkedIn profile link)
+GitHub: https://github.com/Shyam241209/Portfolio-Pofile
+LinkedIn: https://www.linkedin.com/in/shyamsundarv2412/

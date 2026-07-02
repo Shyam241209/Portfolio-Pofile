@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <Tooltip>
               <TooltipTrigger asChild>
-                <a href="https://github.com/Shyam241209" target="_blank" rel="noopener noreferrer" className="social-icon github-pop text-foreground" aria-label="GitHub">
+                <a href="https://github.com/Shyam241209/Portfolio-Pofile" target="_blank" rel="noopener noreferrer" className="social-icon github-pop text-foreground" aria-label="GitHub">
                   <Github />
                 </a>
               </TooltipTrigger>

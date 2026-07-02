@@ -171,7 +171,7 @@ const Contact = () => {
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://github.com/Shyam241209"
+                    href="https://github.com/Shyam241209/Portfolio-Pofile"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit GitHub profile"
